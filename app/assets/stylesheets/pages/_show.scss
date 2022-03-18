@@ -1,21 +1,35 @@
-// Import page-specific CSS files here.
-@import "home";
-@import "show";
-
-h2 {
-  color: white;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Rubik', sans-serif;
 }
-#results-index {
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	background-color: #17171b;
+}
+.container {
+	width: 80%;
+}
+#results {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 16px;
+  margin: 40px 0;
 }
 
-#results-index li {
+li {
 	position: relative;
 	list-style: none;
-	max-height: 200px;
-  max-width: 280px;
+	max-height: 280px;
+  max-width: 200px;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -60,4 +74,8 @@ li:hover p {
 	opacity: 0;
 	transform: translateY(20%);
 	filter: blur(2px);
+}
+
+.links {
+  display: flex;
 }

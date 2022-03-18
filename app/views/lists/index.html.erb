@@ -1,0 +1,14 @@
+<br><br><h2>All lists</h2>
+
+<div class="container">
+  <div id="results-index">
+    <% @lists.each do |list| %>
+      <li>
+        <a href="<%="/lists/#{list.id}"%>"><img src=<%= list.image_url %> /></a>
+        <p><%= list.name %></p>
+      </li>
+    <% end %>
+  </div>
+</div>
+
+<p><%= link_to "New list", new_list_path, class: "btn btn-primary" %></p>

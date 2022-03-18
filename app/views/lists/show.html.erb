@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@list.image_url%>)">
+  <%= @list.name %>
+</div>
+
+<div class="container">
+  <div id="results">
+    <% @list.movies.each do |movie| %>
+      <li>
+        <img src=<%= movie.poster_url %> />
+        <p><%= movie.title %></p>
+      </li>
+    <% end %>
+  </div>
+</div>
+
+<div class="links">
+  <%= link_to "Add Movie", new_list_bookmark_path(@list), class:"btn"%>
+  <%= link_to "All Lists", lists_path, class:"btn"%>
+</div>
